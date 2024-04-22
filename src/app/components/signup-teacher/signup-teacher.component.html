@@ -1,0 +1,121 @@
+<div class=" d-flex justify-content-center align-items-center border-start border-end   ">
+    <form [formGroup]="teacherForm" class=" col-12 col-md-10">
+
+        <h3 class="mb-5">Sign up (<span class="text-danger fw-bolder"> TEACHER </span>)</h3>
+
+        <div>
+            <input formControlName="firstName" type="text" class="form-control my-2" placeholder="First Name">
+            <span
+                *ngIf="teacherForm.controls['firstName'].invalid && (teacherForm.controls['firstName'].touched || teacherForm.controls['firstName'].dirty )">
+                <span *ngIf="teacherForm.controls['firstName'].errors?.['required']" class="text-danger ">First Name is
+                    required</span>
+                <span *ngIf="teacherForm.controls['firstName'].errors?.['minlength']" class="text-danger ">First name
+                    must be
+                    atleast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="lastName" type="text" class="form-control my-2" placeholder="Last Name">
+            <span
+                *ngIf="teacherForm.controls['lastName'].invalid && (teacherForm.controls['lastName'].touched || teacherForm.controls['lastName'].dirty )">
+                <span *ngIf="teacherForm.controls['lastName'].errors?.['required']" class="text-danger ">Last Name is
+                    required</span>
+                <span *ngIf="teacherForm.controls['lastName'].errors?.['minlength']" class="text-danger ">Last name must
+                    be
+                    atleast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="email" type="email" class="form-control my-2" placeholder="Email">
+            <span
+                *ngIf="teacherForm.controls['email'].invalid && (teacherForm.controls['email'].touched || teacherForm.controls['email'].dirty )">
+                <span *ngIf="teacherForm.controls['email'].errors?.['required']" class="text-danger ">email is
+                    required</span>
+                <span *ngIf="teacherForm.controls['email'].errors?.['email']"
+                    class="text-danger ">example@xyz.com</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="phoneNumber" type="text" class="form-control my-2" placeholder="Phone Number">
+            <span
+                *ngIf="teacherForm.controls['phoneNumber'].invalid && (teacherForm.controls['phoneNumber'].touched || teacherForm.controls['phoneNumber'].dirty )">
+                <span *ngIf="teacherForm.controls['phoneNumber'].errors?.['required']" class="text-danger ">phone number
+                    is
+                    required</span>
+                <span
+                    *ngIf="teacherForm.controls['phoneNumber'].errors?.['minlength'] || teacherForm.controls['phoneNumber'].errors?.['maxlength']"
+                    class="text-danger ">phone
+                    number
+                    must
+                    be 8 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="address" type="text" class="form-control my-2" placeholder="Address">
+            <span
+                *ngIf="teacherForm.controls['address'].invalid && (teacherForm.controls['address'].touched || teacherForm.controls['address'].dirty )">
+                <span *ngIf="teacherForm.controls['address'].errors?.['required']" class="text-danger ">Address is
+                    required</span>
+                <span *ngIf="teacherForm.controls['address'].errors?.['minlength']" class="text-danger ">Address
+                    must be alteast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="password" type="password" class="form-control my-2" placeholder="Password">
+            <span
+                *ngIf="teacherForm.controls['password'].invalid && (teacherForm.controls['password'].touched || teacherForm.controls['password'].dirty )">
+                <span *ngIf="teacherForm.controls['password'].errors?.['required']" class="text-danger ">password is
+                    required</span>
+                <span *ngIf="teacherForm.controls['password'].errors?.['minlength']" class="text-danger ">password
+                    must be alteast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <button class="form-control mt-2 btn btn-outline-dark" (click)="filePickerPicture.click()">Upload your <span
+                    class="text-danger fw-bolder">Picture</span>
+            </button>
+            <span class="text-danger ">photo is required</span>
+
+            <input (change)="onImageSelected($event)" type="file" style="visibility: hidden; width: 0px ; height: 0px;"
+                #filePickerPicture>
+        </div>
+        <div>
+            <img class="w-100 rounded-2 mb-2" [src]="imagePreview" alt="">
+        </div>
+
+
+
+        <div>
+            <button class="form-control mt-2 btn btn-outline-dark" (click)="filePickerCv.click()">Upload
+                your <span class="text-danger fw-bolder">Curriculum Vitae</span></button>
+            <input (change)="onCvSelected($event)" type="file" style="visibility: hidden; width: 0px ; height: 0px;"
+                #filePickerCv>
+        </div>
+
+        <div class="my-2">
+            <select formControlName="speciality" class="form-select border-danger " aria-label="Default select example">
+                <option selected value="">select speciality</option>
+                <option value="frontend">FrontEnd</option>
+                <option value="backend">BackEnd</option>
+                <option value="database">DataBase</option>
+            </select>
+
+
+            <span
+                *ngIf="teacherForm.controls['speciality'].invalid && (teacherForm.controls['speciality'].touched || teacherForm.controls['speciality'].dirty )">
+                <span *ngIf="teacherForm.controls['speciality'].errors?.['required']" class="text-danger ">choose a
+                    speciality</span>
+            </span>
+        </div>
+
+        <button [disabled]="teacherForm.invalid" (click)="addTeacher()" class="btn btn-dark w-100 py-2"
+            type="submit">signup</button>
+
+    </form>
+</div>

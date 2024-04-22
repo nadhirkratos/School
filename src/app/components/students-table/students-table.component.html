@@ -1,0 +1,41 @@
+<table class="table table-bordered ">
+
+
+
+
+    <thead>
+        <tr>
+            <th class="text-center  " scope="col">id</th>
+            <th class="text-center  " scope="col">First Name</th>
+            <th class="text-center  " scope="col">Last Name</th>
+            <th class="text-center  " scope="col">Email</th>
+            <th class="text-center  " scope="col">Phone Number</th>
+            <th class="text-center  " scope="col">address</th>
+            <th class="text-center  " scope="col">Enrolled in</th>
+
+            <th class="text-center  text-center" scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <th class="text-center " scope="row">{{student._id}}</th>
+            <td class="text-center ">{{student.firstName}}</td>
+            <td class="text-center ">{{student.lastName}}</td>
+            <td class="text-center ">{{student.email}}</td>
+            <td class="text-center ">{{student.phoneNumber}}</td>
+            <td class="text-center ">{{student.address}}</td>
+            <td class="text-center ">{{student.isEnrolledIn[0].name}}</td>
+
+            <td class="text-center ">
+                <button class="px-5 ms-1 btn btn-danger" (click)="goToEditStudent(student._id)">View / Edit Score</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+
+
+
+
+
+</table>

@@ -1,0 +1,89 @@
+<div class=" d-flex w-100 h-100 p-3 mx-auto flex-column text-center text-bg-dark  ">
+
+
+    <main class="px-3 d-flex flex-column justify-content-center align-items-center  " style="height: 300px;">
+
+        <h1>ADD COURSE</h1>
+    </main>
+
+</div>
+
+<div class="d-flex justify-content-center pb-5 bg-dark">
+    <div class="col-lg-7 d-flex flex-column  justify-content-center ">
+        <div class="p-4 shadow bg-white rounded ">
+            <form [formGroup]="courseForm" class="card-body">
+
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="mb-0 fw-bolder ">Name Of Course</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <input formControlName="name" class="w-100 form-control " type="text"
+                            placeholder="write down the name of the course">
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="mb-0 fw-bolder ">Duration Of Course (<span class="fw-normal "> Months </span>)</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <input formControlName="duration" class="w-100 form-control " type="number"
+                            placeholder="duration of the course ( months )">
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="mb-0 fw-bolder ">Teacher Of Course</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <select formControlName="teacher" class="form-select col-sm-6"
+                            aria-label="Default select example">
+
+                            <option selected value="">none</option>
+                            <ng-container *ngFor="let teacher of teachers">
+                                <option *ngIf="teacher.role == 'teacher'" [value]="teacher._id">Mr/Mrs {{
+                                    teacher.lastName }}
+                                    {{ teacher.firstName }}
+                                </option>
+                            </ng-container>
+
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="mb-0 fw-bolder ">Description Of Course</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <textarea formControlName="description" rows="2" class="w-100 form-control "
+                            placeholder="describe the course"></textarea>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="mb-0 fw-bolder ">Photo Of Course</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <input (change)="onImageSelected($event)" class="w-100 form-control " type="file">
+                        <hr>
+                        <img class="w-100 img-fluid rounded-3 " [src]="imagePreview" alt="">
+                    </div>
+                </div>
+
+                <button (click)="addCourse()" class="btn btn-dark w-100 my-2" type="submit">Add Course</button>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class=" d-flex w-100 h-100 p-3 mx-auto flex-column text-center text-bg-dark  ">
+
+
+    <main class="px-3 d-flex flex-column justify-content-center " style="height: 300px;">
+        <h1>SEARCH FOR TEACHERS</h1>
+        <h6 class="fw-normal ">search for teacher by his/her speciality or by his/her name</h6>
+        <form [formGroup]="searchForm" class="mb-3">
+
+            <input formControlName="searchValue" type="text" class="container form-control form-control-sm"
+                aria-describedby="helpId" placeholder="speciality/name" />
+
+            <button (click)="search()" type="button" class=" px-5 btn py-1  btn-danger mt-3">SEARCH</button>
+
+
+        </form>
+
+    </main>
+
+</div>
+
+<div class="container mb-5">
+
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3">
+        <ng-container *ngFor="let instructor of teachers" class="col">
+            <app-instructor-card *ngIf="instructor.role=='teacher'" [instructor]="instructor"></app-instructor-card>
+        </ng-container>
+    </div>
+</div>

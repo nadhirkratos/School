@@ -1,0 +1,74 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+
+        <!-- picture section -->
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card mb-4">
+                    <div class="p-0  card-body text-center">
+                        <img [src]="course?.photo" alt="avatar" class="w-100 ">
+                        <h5 class="my-3"> Course's name : <span class="text-danger ">{{course?.name}}</span></h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- details section -->
+            <div class="col-lg-7">
+                <div class="card mb-4">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Course's Name</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{course?.name}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Description</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{course?.description}}</p>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Duration</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{course?.duration}} MONTH(s)</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Teacher</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{course?.teacher.firstName}} {{course?.teacher.lastName}}</p>
+                            </div>
+                        </div>
+                        
+
+                        
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+<div class="col mt-5">
+    <div class="card shadow-sm">
+        <img [src]="courseCard.photo" class="rounded-2 " alt="">
+        <div class="card-body">
+            <p class="fw-bold text-danger">{{courseCard.name}}</p>
+            <p class="card-text">{{courseCard.description}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <button (click)="viewCourse(courseCard._id)" type="button" class="w-50  btn btn text-bg-dark  ">View Course</button>
+                <h6 class="text-danger">{{courseCard.duration}} MONTH(s)</h6>
+            </div>
+        </div>
+    </div>
+</div>

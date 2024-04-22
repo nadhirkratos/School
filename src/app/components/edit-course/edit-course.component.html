@@ -1,0 +1,84 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+
+        <!-- picture section -->
+        <form [formGroup]="courseForm" class="row">
+
+
+
+
+            <div class="col-lg-5">
+                <div class="card mb-4">
+                    <div class="p-0  card-body text-center">
+                        <img [src]="course?.photo" alt="avatar" class="w-100 ">
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- details section -->
+            <div class="col-lg-7">
+                <div class="card mb-4">
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Course's Name</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <input formControlName="name" class="w-100 form-control " type="text">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Description</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <textarea formControlName="description" class="w-100 form-control "
+                                    type="text"></textarea>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Duration</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <input formControlName="duration" class="w-100 form-control " type="number">
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Teacher</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <select formControlName="teacher" class="form-select"
+                                    aria-label="Default select example">
+                                    <option selected [value]="">none</option>
+                                    <option [value]="teacher._id" *ngFor="let teacher of teachers">{{teacher.lastName}}
+                                        {{teacher.firstName}}</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <button (click)="updateCourse()" class="btn btn-dark w-100" type="submit">Update Course</button>
+
+
+
+
+        </form>
+    </div>
+</section>

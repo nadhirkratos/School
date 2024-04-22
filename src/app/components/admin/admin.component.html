@@ -1,0 +1,38 @@
+<div class=" d-flex w-100 h-100 p-3 mx-auto flex-column text-center text-bg-dark  ">
+
+
+    <main class="px-3 d-flex flex-column justify-content-center " style="height: 400px;">
+        <h1>ADMIN DASHBOARD</h1>
+        <p class="lead"> Here you can add delete view all students, teachers, parents, aswell as courses,notes, etc ...
+        </p>
+    </main>
+
+</div>
+
+<div class=" mx-5  py-5  ">
+    <div class="mx-5">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active " id="users-tab" data-bs-toggle="tab" data-bs-target="#users-tab-pane"
+                    type="button" role="tab" aria-controls="users-tab-pane" aria-selected="true">users</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses-tab-pane"
+                    type="button" role="tab" aria-controls="courses-tab-pane" aria-selected="false">courses</button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="users-tab-pane" role="tabpanel" aria-labelledby="users-tab"
+                tabindex="0">
+                <app-users-table></app-users-table>
+            </div>
+            <div class="tab-pane fade" id="courses-tab-pane" role="tabpanel" aria-labelledby="courses-tab" tabindex="0">
+
+                <app-courses-table></app-courses-table>
+            </div>
+
+
+        </div>
+    </div>
+</div>

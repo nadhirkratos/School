@@ -1,0 +1,209 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <form class="w-100">
+
+            <div class="row">
+
+
+                <!-- picture section -->
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="p-0  card-body text-center">
+                            <img [src]="parent?.photo" alt="avatar" class="w-100 ">
+                            <h5 class="my-3"><span class="text-danger ">The {{parent?.role}}</span> :
+                                {{parent?.firstName}}
+                                {{parent?.lastName}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- details section -->
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-center  ">This is you ( THE PARENT )</h5>
+                            <hr class="text-danger ">
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">First Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{parent?.firstName}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Last Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{parent?.lastName}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">E-mail</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{parent?.email}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Phone Number</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{parent?.phoneNumber}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Address</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{parent?.address}}</p>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <br>
+
+            <div class="row ">
+
+
+                <!-- picture section -->
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="p-0  card-body text-center">
+                            <img [src]="user?.photo" alt="avatar" class="w-100 ">
+                            <h5 class="my-3"><span class="text-danger ">The {{user?.role}}</span> :
+                                {{user?.firstName}}
+                                {{user?.lastName}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- details section -->
+                <div class="col-lg-7">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-center  ">This is your child ( THE STUDENT )</h5>
+                            <hr class="text-danger ">
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">First Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.firstName}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Last Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.lastName}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">E-mail</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.email}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Phone Number</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.phoneNumber}}</p>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Address</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.address}}</p>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-center ">RESULTS</h5>
+                            <hr class="text-danger ">
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Score</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.score}}</p>
+                                </div>
+                            </div>
+                            <br>
+        
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Notes</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="m-0 ">{{user?.notes}}</p>
+                                </div>
+                            </div>
+        
+        
+        
+        
+        
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</section>

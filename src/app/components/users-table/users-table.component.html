@@ -1,0 +1,41 @@
+<table class="table table-bordered ">
+
+
+
+
+    <thead>
+        <tr>
+            <th class="text-center  " scope="col">id</th>
+            <th class="text-center  " scope="col">First Name</th>
+            <th class="text-center  " scope="col">Last Name</th>
+            <th class="text-center  " scope="col">Email</th>
+            <th class="text-center  " scope="col">Phone Number</th>
+            <th class="text-center  " scope="col">address</th>
+            <th class="text-center  " scope="col">role</th>
+            <th class="text-center  text-center" scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <th class="text-center " scope="row">{{user._id}}</th>
+            <td class="text-center ">{{user.firstName}}</td>
+            <td class="text-center ">{{user.lastName}}</td>
+            <td class="text-center ">{{user.email}}</td>
+            <td class="text-center ">{{user.phoneNumber}}</td>
+            <td class="text-center ">{{user.address}}</td>
+            <td class="text-center ">{{user.role}}</td>
+            <td class="text-center ">
+                <button class="px-5 ms-1 btn btn-outline-success" (click)="goToviewUser(user._id)">View</button>
+                <button class="px-5 ms-1 btn btn-outline-primary" (click)="goToEditUser(user._id)">Edit</button>
+                <button class="px-5 ms-1 btn btn-outline-danger" (click)="deleteUser(user._id)">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+
+
+
+
+
+</table>

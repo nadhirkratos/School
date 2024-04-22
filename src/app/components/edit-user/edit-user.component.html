@@ -1,0 +1,123 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <form [formGroup]="userForm" class="w-100">
+
+            <div class="row">
+                <!-- picture section -->
+                <div class="col-lg-5">
+                    <div class="card mb-4">
+                        <div class="p-0  card-body text-center">
+                            <img [src]="user?.photo" alt="avatar" class="w-100 ">
+                            <h5 class="my-3"><span class="text-danger ">The {{user?.role}}</span> : {{user?.firstName}}
+                                {{user?.lastName}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- details section -->
+                <div class="col-lg-7">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">First Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="w-100 form-control " type="text" formControlName="firstName">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Last Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="w-100 form-control " type="text" formControlName="lastName">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">E-mail</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="w-100 form-control " type="text" formControlName="email">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Phone Number</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="w-100 form-control " type="text" formControlName="phoneNumber">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Address</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input class="w-100 form-control " type="text" formControlName="address">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row d-flex flex-row  align-items-center">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder ">Role</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="form-select border-danger " aria-label="Default select example"
+                                        formControlName="role">
+
+                                        <option value="admin">Admin</option>
+                                        <option value="teacher">Teacher</option>
+                                        <option value="student">Student</option>
+                                        <option value="parent">Parent</option>
+                                    </select>
+
+                                </div>
+
+
+                            </div>
+                            <hr>
+                            <div class="row d-flex flex-row  align-items-center">
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-bolder "> Currently enrolled in </p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="form-select border-danger " aria-label="Default select example"
+                                        formControlName="isEnrolledIn">
+                                        
+                                        <option selected value="">None</option>
+                                        
+                                        <ng-container *ngFor="let course of courses">
+                                            <option [value]="course._id">{{course.name}}</option>
+                                        </ng-container>
+
+                                        
+                                    </select>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button (click)="editUser()" class="btn btn-dark w-100" type="submit">Update User</button>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</section>

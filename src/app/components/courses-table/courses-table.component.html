@@ -1,0 +1,35 @@
+<table class="table table-bordered ">
+
+
+
+
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">duration</th>
+            <th scope="col">teacher</th>
+            <th class="text-center " scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses">
+            <th scope="row">{{course?._id}}</th>
+            <td>{{course?.name}}</td>
+            <td>{{course?.duration}} Month(s)</td>
+            <td>{{course?.teacher.firstName}} {{course?.teacher.lastName}}</td>
+            <td class="text-center ">
+                <button class="w-25 btn btn-dark  ms-1 " (click)="viewCours(course._id)">View</button>
+                <button class="w-25 btn btn-primary  ms-1" (click)="editCours(course._id)">Edit</button>
+                <button class="w-25 btn btn-danger ms-1 " (click)="deleteCourse(course._id)">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+
+
+
+
+
+</table>

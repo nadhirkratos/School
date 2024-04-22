@@ -1,0 +1,91 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+
+        <!-- picture section -->
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card mb-4">
+                    <div class="p-0  card-body text-center">
+                        <img [src]="user?.photo" alt="avatar" class="w-100 ">
+                        <h5 class="my-3"><span class="text-danger ">The {{user?.role}}</span> : {{user?.firstName}}
+                            {{user?.lastName}}</h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- details section -->
+            <div class="col-lg-7">
+                <div class="card mb-4">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Full Name</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{user?.firstName}} {{user?.lastName}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">E-mail</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{user?.email}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Phone Number</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{user?.phoneNumber}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Address</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{user?.address}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">Role</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-danger fw-bolder  mb-0">{{user?.role}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="mb-0 fw-bolder ">EnrolledIn</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-muted mb-0">{{user?.isEnrolledIn[0].name}}</p>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

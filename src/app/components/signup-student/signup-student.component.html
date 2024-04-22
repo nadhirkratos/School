@@ -1,0 +1,95 @@
+<div class=" d-flex justify-content-center align-items-center border-start border-end   ">
+    <form [formGroup]="studentForm" class=" col-12 col-md-10">
+
+        <h3 class="mb-5">Sign up (<span class="text-danger fw-bolder"> STUDENT </span>)</h3>
+        <div>
+            <input formControlName="firstName" type="text" class="form-control my-2" placeholder="First Name">
+            <span
+                *ngIf="studentForm.controls['firstName'].invalid && (studentForm.controls['firstName'].touched || studentForm.controls['firstName'].dirty )">
+                <span *ngIf="studentForm.controls['firstName'].errors?.['required']" class="text-danger ">First Name is
+                    required</span>
+                <span *ngIf="studentForm.controls['firstName'].errors?.['minlength']" class="text-danger ">First name
+                    must be
+                    atleast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="lastName" type="text" class="form-control my-2" placeholder="Last Name">
+            <span
+                *ngIf="studentForm.controls['lastName'].invalid && (studentForm.controls['lastName'].touched || studentForm.controls['lastName'].dirty )">
+                <span *ngIf="studentForm.controls['lastName'].errors?.['required']" class="text-danger ">Last Name is
+                    required</span>
+                <span *ngIf="studentForm.controls['lastName'].errors?.['minlength']" class="text-danger ">Last name must
+                    be
+                    atleast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="email" type="email" class="form-control my-2" placeholder="Email">
+            <span
+                *ngIf="studentForm.controls['email'].invalid && (studentForm.controls['email'].touched || studentForm.controls['email'].dirty )">
+                <span *ngIf="studentForm.controls['email'].errors?.['required']" class="text-danger ">email is
+                    required</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="phoneNumber" type="tel" class="form-control my-2" placeholder="Phone Number">
+            <span
+                *ngIf="studentForm.controls['phoneNumber'].invalid && (studentForm.controls['phoneNumber'].touched || studentForm.controls['phoneNumber'].dirty )">
+                <span *ngIf="studentForm.controls['phoneNumber'].errors?.['required']" class="text-danger ">phone number
+                    is
+                    required</span>
+                <span
+                    *ngIf="studentForm.controls['phoneNumber'].errors?.['minlength'] || studentForm.controls['phoneNumber'].errors?.['maxlength']"
+                    class="text-danger ">phone
+                    number
+                    must
+                    be 8 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="address" type="text" class="form-control my-2" placeholder="Address">
+            <span
+                *ngIf="studentForm.controls['address'].invalid && (studentForm.controls['address'].touched || studentForm.controls['address'].dirty )">
+                <span *ngIf="studentForm.controls['address'].errors?.['required']" class="text-danger ">Address is
+                    required</span>
+                <span *ngIf="studentForm.controls['address'].errors?.['minlength']" class="text-danger ">Address
+                    must be alteast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="password" type="password" class="form-control my-2" placeholder="Password">
+            <span
+                *ngIf="studentForm.controls['password'].invalid && (studentForm.controls['password'].touched || studentForm.controls['password'].dirty )">
+                <span *ngIf="studentForm.controls['password'].errors?.['required']" class="text-danger ">password is
+                    required</span>
+                <span *ngIf="studentForm.controls['password'].errors?.['minlength']" class="text-danger ">password
+                    must be alteast 3 characters</span>
+            </span>
+        </div>
+
+
+
+        <div>
+            <button class="form-control my-2 btn btn-outline-dark" (click)="filePickerPicture.click()">Upload your <span
+                    class="text-danger fw-bolder">Picture</span>
+            </button>
+            <span class="text-danger ">photo is required</span>
+
+            <input (change)="onImageSelected($event)" type="file" style="visibility: hidden; width: 0px ; height: 0px;"
+                #filePickerPicture>
+        </div>
+        <div>
+            <img class="w-100 rounded-2 mb-2" [src]="imagePreview" alt="">
+        </div>
+
+        <button [disabled]="studentForm.invalid" (click)="addStudent()" class="btn btn-dark w-100 py-2"
+            type="submit">signup</button>
+
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+        <p class="fw-normal text-center ">Specialized at <span
+                        class="text-danger  fw-bolder ">{{instructor.speciality}}</span></p>
+        <img class="w-100 rounded-top-5   " [src]="instructor.photo" alt="">
+        <title>{{instructor.firstName}}</title>
+
+
+
+        <button class="btn btn-outline-dark mt-1 w-100 rounded-bottom-5 rounded-top-0"
+                (click)="viewTeacher(instructor._id)">View Teacher</button>
+</div>

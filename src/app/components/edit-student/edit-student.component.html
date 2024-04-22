@@ -1,0 +1,80 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <form [formGroup]="editStudentForm" class="w-100">
+
+            <div class="row">
+                <!-- picture section -->
+                <div class="col-lg-5">
+                    <div class="card mb-4">
+                        <div class="p-0  card-body text-center">
+                            <img [src]="user?.photo" alt="avatar" class="w-100 ">
+                            <h5 class="my-3"><span class="text-danger ">The {{user?.role}}</span> : {{user?.firstName}}
+                                {{user?.lastName}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- details section -->
+                <div class="col-lg-7">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0 fw-normal">Course's Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="fw-normal  ps-2 mb-0">{{user?.isEnrolledIn[0].name}}</p>
+                                </div>
+                            </div>
+                            
+
+
+                            <hr>
+
+                            <div class="row">
+
+                                <div class="col-sm-3 d-flex align-items-center ">
+                                    <p class="mb-0 fw-normal">Score</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="d-flex justify-content-center align-items-center ">
+                                        <input class="  form-control " type="number" min="0" max="20"
+                                            formControlName="score">
+                                        <span class="ms-2 fw-normal">/20</span>
+                                    </div>
+                                    <span
+                                        *ngIf="editStudentForm.controls['score'].invalid && (editStudentForm.controls['score'].touched || editStudentForm.controls['score'].dirty )">
+                                        <span *ngIf="editStudentForm.controls['score'].errors?.['required']"
+                                            class="text-danger ">score is required</span>
+                                        <span *ngIf="editStudentForm.controls['score'].errors?.['min']"
+                                            class="text-danger ">score must be atleast 0</span>
+                                        <span *ngIf="editStudentForm.controls['score'].errors?.['max']"
+                                            class="text-danger ">score must be equal or less than 20</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 d-flex  ">
+                                    <p class="mb-0 fw-normal">Notes</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <textarea class="w-100 form-control " rows="3" formControlName="notes"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <button (click)="editNotes()" class="btn btn-dark w-100" type="submit">Edit Notes</button>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</section>

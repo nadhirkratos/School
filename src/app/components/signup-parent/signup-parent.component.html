@@ -1,0 +1,111 @@
+<div class=" d-flex justify-content-center align-items-center border-start border-end   ">
+    <form [formGroup]="parentForm" class=" col-12 col-md-10">
+
+        <h3 class="mb-5">Sign up (<span class="text-danger fw-bolder"> TEACHER </span>)</h3>
+
+        <div>
+            <input formControlName="firstName" type="text" class="form-control my-2" placeholder="First Name">
+            <span
+                *ngIf="parentForm.controls['firstName'].invalid && (parentForm.controls['firstName'].touched || parentForm.controls['firstName'].dirty )">
+                <span *ngIf="parentForm.controls['firstName'].errors?.['required']" class="text-danger ">First Name is
+                    required</span>
+                <span *ngIf="parentForm.controls['firstName'].errors?.['minlength']" class="text-danger ">First name
+                    must be
+                    atleast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="lastName" type="text" class="form-control my-2" placeholder="Last Name">
+            <span
+                *ngIf="parentForm.controls['lastName'].invalid && (parentForm.controls['lastName'].touched || parentForm.controls['lastName'].dirty )">
+                <span *ngIf="parentForm.controls['lastName'].errors?.['required']" class="text-danger ">Last Name is
+                    required</span>
+                <span *ngIf="parentForm.controls['lastName'].errors?.['minlength']" class="text-danger ">Last name must
+                    be
+                    atleast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="email" type="email" class="form-control my-2" placeholder="Email">
+            <span
+                *ngIf="parentForm.controls['email'].invalid && (parentForm.controls['email'].touched || parentForm.controls['email'].dirty )">
+                <span *ngIf="parentForm.controls['email'].errors?.['required']" class="text-danger ">email is
+                    required</span>
+                <span *ngIf="parentForm.controls['email'].errors?.['email']" class="text-danger ">example@xyz.com</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="phoneNumber" type="text" class="form-control my-2" placeholder="Phone Number">
+            <span
+                *ngIf="parentForm.controls['phoneNumber'].invalid && (parentForm.controls['phoneNumber'].touched || parentForm.controls['phoneNumber'].dirty )">
+                <span *ngIf="parentForm.controls['phoneNumber'].errors?.['required']" class="text-danger ">phone number
+                    is required</span>
+                <span
+                    *ngIf="parentForm.controls['phoneNumber'].errors?.['minlength'] || parentForm.controls['phoneNumber'].errors?.['maxlength']"
+                    class="text-danger ">phone number must be 8 characters</span>
+
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="address" type="text" class="form-control my-2" placeholder="Address">
+            <span
+                *ngIf="parentForm.controls['address'].invalid && (parentForm.controls['address'].touched || parentForm.controls['address'].dirty )">
+                <span *ngIf="parentForm.controls['address'].errors?.['required']" class="text-danger ">Address is
+                    required</span>
+                <span *ngIf="parentForm.controls['address'].errors?.['minlength']" class="text-danger ">Address
+                    must be alteast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <input formControlName="password" type="password" class="form-control my-2" placeholder="Password">
+            <span
+                *ngIf="parentForm.controls['password'].invalid && (parentForm.controls['password'].touched || parentForm.controls['password'].dirty )">
+                <span *ngIf="parentForm.controls['password'].errors?.['required']" class="text-danger ">password is
+                    required</span>
+                <span *ngIf="parentForm.controls['password'].errors?.['minlength']" class="text-danger ">password
+                    must be alteast 3 characters</span>
+            </span>
+        </div>
+
+        <div>
+            <button class="form-control mt-2 btn btn-outline-dark" (click)="filePickerPicture.click()">Upload your <span
+                    class="text-danger fw-bolder">Picture</span>
+            </button>
+            <span class="text-danger ">photo is required</span>
+
+            <input (change)="onImageSelected($event)" type="file" style="visibility: hidden; width: 0px ; height: 0px;"
+                #filePickerPicture>
+        </div>
+        <div>
+            <img class="w-100 rounded-2 mb-2" [src]="imagePreview" alt="">
+        </div>
+
+        <div>
+            <input formControlName="phoneNumberOfChild" type="text" class="form-control border-danger  my-2"
+                placeholder="Your child's Phone Number">
+            <span
+                *ngIf="parentForm.controls['phoneNumberOfChild'].invalid && (parentForm.controls['phoneNumberOfChild'].touched || parentForm.controls['phoneNumberOfChild'].dirty )">
+                <span *ngIf="parentForm.controls['phoneNumberOfChild'].errors?.['required']"
+                    class="text-danger ">phoneNumberOfChild is
+                    required</span>
+                <span
+                    *ngIf="parentForm.controls['phoneNumberOfChild'].errors?.['minlength'] || parentForm.controls['phoneNumberOfChild'].errors?.['maxlength']"
+                    class="text-danger ">phoneNumberOfChild
+                    must be exactly 8 characters</span>
+
+            </span>
+        </div>
+
+
+
+
+        <button [disabled]="parentForm.invalid" (click)="addParent()" class="btn btn-dark w-100 py-2"
+            type="submit">signup</button>
+
+    </form>
+</div>
